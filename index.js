@@ -1,11 +1,20 @@
 var levenshtein = require('fast-levenshtein');
 
-function prepareString(string, toLowercase = true) {
-    string = string.toString !== undefined ? string.toString() : string; 
-    if (toLowercase) {
-        return string.toLowerCase();
+function prepareString(something, toLowercase = true) {
+    if (
+        something.toString !== undefined && 
+        typeof something.toString == 'function' && 
+        something.toString() != '[object Object]'
+    ) {
+        something = something.toString();
     } else {
-        return string;
+        something = JSON.stringify(something);
+    }
+
+    if (toLowercase) {
+        return something.toLowerCase();
+    } else {
+        return something;
     }
 }
 
@@ -21,15 +30,17 @@ module.exports = function (strings, compareString, caseInsensitive = true) {
     var nearestStringValue = null;
 
     compareString = prepareString(compareString, caseInsensitive); 
+    console.log("compareString = " + compareString);
 
     for (let stringKey in strings) {
         var string = prepareString(strings[stringKey], caseInsensitive);
+        console.log("string = " + string);
         distances[stringKey] = levenshtein.get(string, compareString);
 
         if (minDistance == -1 || minDistance > distances[stringKey]) {
             minDistance = distances[stringKey];
             nearestStringKey = stringKey;
-            nearestStringValue = string;
+            nearestStringValue = strings[stringKey];
         }
     }
 
