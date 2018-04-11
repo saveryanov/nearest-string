@@ -30,6 +30,15 @@ var nearestStringDistances = nearestString(strings, 'fooo').distances;  // expec
 
 ```
 
+If you want to find nearest string case insensitive use third argument as true (it's false by default):
+
+```js
+nearestString(strings, 'fooo', false).distance;  // expected: 1 - Levenstein distance case sensitive
+nearestString(strings, 'Fooo', false).distance;  // expected: 2 - Levenstein distance case sensitive
+nearestString(strings, 'fooo', true).distance;   // expected: 1 - Levenstein distance case insensitive
+nearestString(strings, 'Fooo', true).distance;   // expected: 1 - Levenstein distance case insensitive
+```
+
 ## Test
 
 ```
