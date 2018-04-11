@@ -29,3 +29,9 @@ var nearestStringDistance = nearestString(strings, 'fooo').distance;  // expecte
 var nearestStringDistances = nearestString(strings, 'fooo').distances;  // expected: [ 1, 4, 4 ] - array of Levenstein distances
 
 ```
+
+## Test
+
+```
+npm test
+```
