@@ -30,11 +30,9 @@ module.exports = function (strings, compareString, caseInsensitive = true) {
     var nearestStringValue = null;
 
     compareString = prepareString(compareString, caseInsensitive); 
-    console.log("compareString = " + compareString);
 
     for (let stringKey in strings) {
         var string = prepareString(strings[stringKey], caseInsensitive);
-        console.log("string = " + string);
         distances[stringKey] = levenshtein.get(string, compareString);
 
         if (minDistance == -1 || minDistance > distances[stringKey]) {

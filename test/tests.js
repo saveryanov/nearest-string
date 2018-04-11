@@ -124,7 +124,7 @@ describe(
         five: {james: "Dudeson"}
     };
     var results = nearestString(strings, {name: 'James Dudeson'});
-    console.log(results);
+
     it('Have all properties', function () {
         chai.should().exist(results.key);
         chai.should().exist(results.value);
