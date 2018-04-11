@@ -18,7 +18,7 @@ function prepareString(something, toLowercase = true) {
     }
 }
 
-module.exports = function (strings, compareString, caseInsensitive = true) {
+module.exports = function (strings, compareString, caseInsensitive = false) {
     var distances;
     if (Array.isArray(strings)) {
         distances = [];

@@ -1,6 +1,6 @@
 {
   "name": "nearest-string",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Find the nearest string with a given string",
   "main": "index.js",
   "scripts": {
