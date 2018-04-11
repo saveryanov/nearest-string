@@ -1,0 +1,35 @@
+{
+  "name": "nearest-string",
+  "version": "1.0.0",
+  "description": "Find the nearest string with a given string",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --reporter spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/saveryanov/nearest-string.git"
+  },
+  "keywords": [
+    "string",
+    "levenstein",
+    "nearest",
+    "similar",
+    "str",
+    "find",
+    "text"
+  ],
+  "author": "Sergey Averyanov",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/saveryanov/nearest-string/issues"
+  },
+  "homepage": "https://github.com/saveryanov/nearest-string#readme",
+  "dependencies": {
+    "fast-levenshtein": "^2.0.6"
+  },
+  "devDependencies": {
+    "chai": "~1.5.0",
+    "mocha": "~1.9.0"
+  }
+}
